@@ -1,0 +1,33 @@
+﻿{% extends "layout.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static',filename="storepageCSS.css")}}" />
+
+<div class="storeHeaderBox">
+    <h1>{{ store['store_name'] }}</h1>
+    <div class="descriptionBox">
+        <p>WARNING: As soon as you click delivery or pick up, your info is sent to the producer and the order is made. BE CAREFUL.</p>
+        <h1>Description of store:</h1>
+        <p>{{ store['description'] }}</p>
+    </div>
+</div>
+<hr>
+<div class="productGrid">
+    {% for product in products %}
+    <div class="productCard">
+        <div class="productTile"><strong>{{ product['name'] }}</strong></div>
+        <div class="priceStockRow">
+            <span>Price: ${{ product['price'] }}</span>
+            <span>Stock: {{ product['stock'] }}</span>
+        </div>
+        <form method="POST">
+            <input type="hidden" name="product_name" value="{{ product['name'] }}">
+            <input type="hidden" name="product_price" value="{{ product['price'] }}">
+
+            <button type="submit" name="order_type" value="Delivery" class="actionButton">Delivery</button>
+            <button type="submit" name="order_type" value="Pickup" class="actionButton">Pick up</button>
+        </form>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

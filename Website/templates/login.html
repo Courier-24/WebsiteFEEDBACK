@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static',filename="loginsigninCSS.css")}}" />
+
+<div class="formloginsignin">
+    <h1>Log in</h1>
+    <form method="POST" action="{{ url_for('login') }}">
+        <input type="email" name="email" id="email" placeholder="Email" required>
+        <input type="password" name="password" id="password" placeholder="Password" required>
+        <button type="submit">Log in</button>
+    </form>
+    <p>Don't have an account?</p>
+    <a href="{{ url_for('signin') }}">Sign in</a>
+</div>
+
+{% endblock %}

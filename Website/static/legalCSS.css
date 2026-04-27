@@ -1,0 +1,15 @@
+.textBox {
+    display: flex;
+    justify-content: center; 
+    padding: 40px;
+    font-family: Arial;
+    line-height: 1
+}
+
+    .textBox div {
+        flex: 1; 
+    }
+
+    .textBox img{
+        width:500px
+    }

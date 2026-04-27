@@ -1,0 +1,49 @@
+.storeHeaderBox {
+    margin-bottom: 20px;
+    font-family:Arial;
+}
+
+.descriptionBox { 
+    border: 1px solid black;
+    padding: 10px;
+    min-height: 100px;
+    font-family:Arial;
+}
+
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+    font-family:Arial;
+}
+
+.productCard {
+    border: 1px solid black; 
+    padding: 10px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 8px; 
+    text-align: center;
+}
+
+.productTitle {
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+
+.priceStockRow {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+}
+
+.actionButton {
+    border: 1px solid black;
+    background: #9dab86;
+    padding: 5px;
+}
+
+
+

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static',filename="loginsigninCSS.css")}}" />
+
+<div class="formloginsignin">
+    <h1>Sign in</h1>
+    <form method="POST" action="{{ url_for('signin') }}">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <label for="usertype">Signing in as:</label>
+        <select name="usertype" id="usertype">
+            <option value="customer">Customer</option>
+            <option value="producer">Producer</option>
+        </select>
+        <button type="submit">Sign in</button>
+    </form>
+    <p>By making an account you agree to our:</p>
+    <a href="{{ url_for("index")}}">Terms and service</a>
+</div>
+
+{% endblock %}

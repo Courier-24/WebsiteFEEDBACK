@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='storelistCSS.css') }}" />
+
+<h2>All Stores</h2>
+
+<div class="storeListBox">
+    {% for store in stores %}
+    <div class="storeRow">
+        <div class="storeContent">
+            <strong>{{ store['store_name'] }}</strong>
+            <p>{{ store['description'] }}</p>
+        </div>
+        <div>
+            <a href="{{ url_for('storepage', store_id=store['id']) }}" class="visitButton">Visit</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

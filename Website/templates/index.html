@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static',filename="indexCSS.css")}}" />
+
+
+<div class="hero-image">
+    <div class="hero-text">
+        <h1>Greenfield Local Hub</h1>
+        <p>Local produce for you</p>
+        <a href="{{ url_for("storelist") }}" class="heroButton">Check all shops</a>
+    </div>
+</div>
+
+<div class="infoBoxes">
+    <div>
+        <h1>Our producers</h1>
+        <p>Our producers produce all these foods from scratch with no extra preservitives so that you can have the freshest food on the market and support them while you eat the produce.</p>
+    </div>
+    <div>
+        <h1>Eating local produce</h1>
+        <p>Eating local produce is healthy compared to supermarkets because you know exactly where they come from, get a fresh palette of food every season and get them as fresh as possible.</p>
+    </div>
+    <div>
+        <h1>Buying local produce</h1>
+        <p>Buying local produce helps not only yourself, but the farmers who make them and the local economy, making sure that everything you eat helps your area.</p>
+    </div>
+</div>
+{% endblock %}

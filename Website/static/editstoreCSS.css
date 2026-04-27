@@ -1,0 +1,52 @@
+.productManagementContainer {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.addProductBox {
+    flex: 1;
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.productListScroll {
+    flex: 2;
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.productCardEdit {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+label, input, textarea, button, h3 {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-family:Arial;
+}
+
+button {
+    background: white;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: #9dab86;
+}
+
+.btnRow {
+    display: flex;
+    gap: 10px;
+}
+
+.editBtn {
+    flex: 3;
+}
+
+.deleteBtn {
+    flex: 1;
+}

@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='ordersCSS.css') }}" />
+
+<h2>Your Orders</h2>
+
+<div class="ordersContainer">
+    {% for order in orders %}
+    <div class="orderRow">
+        <div class="productName">
+            <strong>{{ order['product_name'] }}</strong>
+        </div>
+        <div class="priceInfo">
+            Price: ${{ order['price'] }}
+        </div>
+        <div class="statusInfo">
+            Status: {{ order['order_type'] }} | Tracking: {{ order['tracking_code'] }}
+        </div>
+        <form method="POST" action="{{ url_for('cancel_order', order_id=order['id']) }}">
+            <button type="submit" class="cancelBtn">Cancel order</button>
+        </form>
+    </div>
+    {% else %}
+    <p>You haven't placed any orders yet.</p>
+    {% endfor %}
+</div>
+{% endblock %}

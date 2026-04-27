@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{{url_for('static',filename="layoutCSS.css")}}" />
+    <title></title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for("index")}}">Home</a></li>
+            <li><a href="{{ url_for("storelist")}}">Shops</a></li>
+            <li><a href="{{ url_for("legal")}}">Legal</a></li>
+            <li><a href="{{ url_for("account")}}">Account</a></li>
+            <li><a href="{{ url_for("pagesettings")}}">Page settings</a></li>
+            <li style="float:right">
+                {% if session.get('user_email') %}
+                <p>{{ session['user_email'] }}</p>
+                <a href="{{ url_for('logout') }}">(Log out)</a>
+                {% else %}
+                <a href="{{ url_for('login') }}">Log in/Sign in</a>
+                {% endif %}
+            </li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <div class="footerFlex">
+            <div>
+            <img src=" {{ url_for("static", filename="logo.png") }}" />
+            </div>
+            <div>
+                <p>Greenfield Local Hub</p>
+                <p>Registered number: 91398332</p>
+                <p>Place of registration: 60 Penfold St, London NW8 8PJ</p>
+                <p>Registered office address: Knowsley Place, Knowsley St, Bury BL9 0ST</p>
+                <p>Not Limited</p>
+            </div>
+            <div>
+                <p>Phone: 073823 84346</p>
+                <p>Email: admin@GreenFieldHub.co.uk</p>
+                <a href="{{ url_for("legal")}}"> Legal information </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

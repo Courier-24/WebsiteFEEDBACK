@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static',filename="accountCSS.css")}}" />
+
+<div class="container">
+    <div>
+        <div class="textBox">
+            <p>Welcome {{ session['user_email'] }}</p>
+            <p>You are currently logged in as a {{ session['user_type'] }}</p>
+        </div>
+
+        <div class="buttons">
+            <a href="{{ url_for("orders")}}">Check your orders</a>
+            <p>  </p>
+            {% if session.get('user_type') == 'producer' %}
+            <a href="{{ url_for("editstore")}}">Edit your page</a>
+            {% endif %}
+        </div>
+    </div>
+    <aside>
+        <div class="loyaltyBox">
+            <h1>Loyalty benefits</h1>
+            <p>Staying loyal with a consistant shop allows you to earn loyalty rewards with that specific shop, ranging from:</p>
+            <p>- Exlusive discounts</p>
+            <p>- Free produce</p>
+            <p>- Mails about new produce</p>
+            <p>- Getting to know the producer better</p>
+            <p>- Supporting the producer</p>
+            <p>And many more benefits. We at greenfield partnered with the producers to make sure you get the best deals while getting the best food around.</p>
+            <p>Contact your producer via mail or phone to see what you are eligible for.</p>
+        </div>
+    </aside>
+
+</div>
+<div class="image">
+    <img src="{{url_for('static', filename='account.jpg')}}" alt="market produce" />
+</div>
+{% endblock %}

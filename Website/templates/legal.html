@@ -1,0 +1,34 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static',filename="legalCSS.css")}}" />
+
+<div class="textBox">
+    <div>
+        <p>Greenfield Local Hub</p>
+        <p>Registered number: 91398332</p>
+        <p>Place of registration: 60 Penfold St, London NW8 8PJ</p>
+        <p>Registered office address: Knowsley Place, Knowsley St, Bury BL9 0ST</p>
+        <p>Not Limited</p>
+    </div>
+    <div>
+        <p>Phone: 073823 84346</p>
+        <p>Email: admin@GreenFieldHub.co.uk</p>
+        <a href="{{ url_for("legal") }}"> Legal information </a>
+    </div>
+</div>
+
+<div class="textBox">
+    <div>
+        <img src=" {{ url_for("static", filename="logo.png") }}" />
+    </div>
+    <div>
+        <p>Signing up information:</p>
+        <p>- What data we're using</p>
+        <p>- How we’re storing it</p>
+        <p>- The right for your information to be edited or removed</p>
+        <p>- Information will not be sold</p>
+        <p>- For any more info, contact the listed info above</p>
+    </div>
+</div>
+    {% endblock %}

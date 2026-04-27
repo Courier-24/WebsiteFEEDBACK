@@ -1,0 +1,39 @@
+.ordersContainer {
+    margin-top: 20px;
+    font-family: Arial;
+}
+
+h2 {
+    font-family: Arial;
+}
+
+.orderRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.productName {
+    flex: 1;
+}
+
+.priceInfo {
+    flex: 1;
+}
+
+.statusInfo {
+    flex: 2;
+}
+
+.cancelBtn {
+    border: 1px solid black;
+    background-color: #9dab86;
+    padding: 5px 10px;
+}
+
+    .cancelBtn:hover {
+        background: #f0f0f0;
+    }
